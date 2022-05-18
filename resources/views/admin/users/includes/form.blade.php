@@ -38,5 +38,11 @@
       {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
       <small class="text-danger">{{ $errors->first('password_confirmation') }}</small>
     </div>
+
+    <div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
+      {!! Form::label('roles', 'Roles') !!}
+      {!! Form::select('roles[]', $roles, null, ['id' => 'roles', 'class' => 'form-control select2', 'required' => 'required', 'multiple']) !!}
+      <small class="text-danger">{{ $errors->first('roles') }}</small>
+    </div>
   </div>
 </div>

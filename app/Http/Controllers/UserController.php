@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\StoreUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
+use App\Models\Role;
 use App\Models\User;
 use Freshbitsweb\Laratables\Laratables;
 use Illuminate\Http\Request;
@@ -48,7 +49,10 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');
+
+        $roles = Role::pluck('name', 'id');
+
+        return view('admin.users.create', compact('roles'));
     }
 
     /**
@@ -61,7 +65,11 @@ class UserController extends Controller
     {
         $fields = $request->validated();
 
+        $roles = Arr::pull($fields, 'roles');
+
         $user = User::create(Arr::except($fields, 'avatar'));
+
+        $user->roles()->sync($roles);
 
         if ($request->hasFile('avatar')) {
             $this->saveFile($request->file('avatar'), 'avatar', $user);
@@ -91,8 +99,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
+        $roles = Role::pluck('name', 'id');
 
-        return view('admin.users.edit', compact('user'));
+        return view('admin.users.edit', compact('user', 'roles'));
 
     }
 
@@ -108,8 +117,11 @@ class UserController extends Controller
         $fields = $request->validated();
 
         $password = Arr::pull($fields, 'password');
+        $roles    = Arr::pull($fields, 'roles');
 
         $user->update(Arr::except($fields, 'avatar'));
+
+        $user->roles()->sync($roles);
 
         if ($password) {
             $user->update([

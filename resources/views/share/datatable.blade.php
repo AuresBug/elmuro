@@ -4,6 +4,7 @@
 
       var table = $('#{{ $model }}-table').DataTable({
         serverSide: true,
+        pageLength: 25,
         language: {
           url: '{{ asset('vendor/datatables/es-mx.json') }}'
         },

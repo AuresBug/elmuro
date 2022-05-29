@@ -16,6 +16,6 @@ return [
     /*
      * The fully qualified class name of the media model.
      */
-    'model' => Optix\Media\Models\Media::class,
+    'model' => Auresbug\Media\Models\Media::class,
 
 ];

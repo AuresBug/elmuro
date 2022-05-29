@@ -4,12 +4,12 @@ namespace App\Models;
 
 use App\Enums\EnumRoles;
 use App\Models\SocialProfile;
+use Auresbug\Media\HasMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Optix\Media\HasMedia;
 use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -109,7 +109,7 @@ class User extends Authenticatable implements Auditable
     }
 
 /* -------------------------------------------------------------------------- */
-/*                                 Media Library  optix/media                                 */
+/*                                 Media Library  Auresbug/media                                 */
 /* -------------------------------------------------------------------------- */
 
     public function registerMediaGroups()

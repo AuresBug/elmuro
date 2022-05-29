@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ac7df681815b87670ef302ca1e3f8682",
+    "content-hash": "fa449fdad331780dd12c2e540cab36cc",
     "packages": [
         {
             "name": "almasaeed2010/adminlte",
@@ -104,6 +104,58 @@
                 "source": "https://github.com/asm89/stack-cors/tree/v2.1.1"
             },
             "time": "2022-01-18T09:12:03+00:00"
+        },
+        {
+            "name": "auresbug/media",
+            "version": "v0.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/AuresBug/laravel-media.git",
+                "reference": "9ca32f223e53af702f66a57f23e610a18c5c6cff"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/AuresBug/laravel-media/zipball/9ca32f223e53af702f66a57f23e610a18c5c6cff",
+                "reference": "9ca32f223e53af702f66a57f23e610a18c5c6cff",
+                "shasum": ""
+            },
+            "require": {
+                "intervention/image": "^2.5",
+                "laravel/framework": "~5.8.0|^6.0|^7.0|^8.0|^9.0",
+                "php": "^7.3|^8.0"
+            },
+            "require-dev": {
+                "laravel/legacy-factories": "^1.0.4",
+                "mockery/mockery": "^1.2.3",
+                "orchestra/testbench": "~3.8.6|^4.8|^5.2|^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Auresbug\\Media\\MediaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Auresbug\\Media\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Hector Anaya",
+                    "email": "anayac.hector@gmail.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/AuresBug/laravel-media/tree/v0.6.1"
+            },
+            "time": "2022-05-06T04:15:50+00:00"
         },
         {
             "name": "brick/math",
@@ -3009,59 +3061,6 @@
                 "source": "https://github.com/opis/closure/tree/3.6.3"
             },
             "time": "2022-01-27T09:35:39+00:00"
-        },
-        {
-            "name": "optix/media",
-            "version": "v0.5.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/optixsolutions/laravel-media.git",
-                "reference": "f1935c3982a6943429912a144d51d113198420fb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/optixsolutions/laravel-media/zipball/f1935c3982a6943429912a144d51d113198420fb",
-                "reference": "f1935c3982a6943429912a144d51d113198420fb",
-                "shasum": ""
-            },
-            "require": {
-                "intervention/image": "^2.5",
-                "laravel/framework": "~5.8.0|^6.0|^7.0|^8.0",
-                "php": "^7.3"
-            },
-            "require-dev": {
-                "laravel/legacy-factories": "^1.0.4",
-                "mockery/mockery": "^1.2.3",
-                "orchestra/testbench": "~3.8.6|^4.8|^5.2|^6.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Optix\\Media\\MediaServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Optix\\Media\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Jack Robertson",
-                    "email": "jack@optixsolutions.co.uk"
-                }
-            ],
-            "support": {
-                "issues": "https://github.com/optixsolutions/laravel-media/issues",
-                "source": "https://github.com/optixsolutions/laravel-media/tree/v0.5.0"
-            },
-            "time": "2020-10-06T13:57:54+00:00"
         },
         {
             "name": "owen-it/laravel-auditing",

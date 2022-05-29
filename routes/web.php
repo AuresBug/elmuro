@@ -8,6 +8,10 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Route::get('phpinfo', function () {
+    phpinfo();
+});
+
 // Auth
 Auth::routes(['register' => false]);
 Route::get('/auth/{driver}/redirect', [SocialiteController::class, 'redirectToProvider'])->name('google.login');

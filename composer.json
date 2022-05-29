@@ -2,10 +2,14 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "auresbug/media": "^0.6.1",
         "freshbitsweb/laratables": "^2.5",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -18,7 +22,6 @@
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.3",
         "maatwebsite/excel": "^3.1",
-        "optix/media": "^0.5.0",
         "owen-it/laravel-auditing": "^13.0",
         "realrashid/sweet-alert": "^5.0",
         "spatie/laravel-permission": "^5.5"

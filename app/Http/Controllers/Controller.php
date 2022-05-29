@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Auresbug\Media\MediaUploader;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Str;
-use Optix\Media\MediaUploader;
 
 class Controller extends BaseController
 {

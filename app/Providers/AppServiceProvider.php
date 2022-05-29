@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
+use Auresbug\Media\Facades\Conversion;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 use Intervention\Image\Image;
-use Optix\Media\Facades\Conversion;
 
 class AppServiceProvider extends ServiceProvider
 {

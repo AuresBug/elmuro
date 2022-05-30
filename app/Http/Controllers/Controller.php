@@ -18,13 +18,14 @@ class Controller extends BaseController
      * @param $group
      * @param $model
      */
-    protected function saveFile($file, $group = 'default', $model)
+    protected function saveFile($file, $group = 'default', $model, $disk = 'private')
     {
         try {
 
             $media = MediaUploader::fromFile($file)
                 ->useFileName(Str::random(64) . '.' . $file->getClientOriginalExtension())
                 ->useName(Str::random(64))
+                ->toDisk($disk)
                 ->upload();
 
             $model->attachMedia($media, $group);

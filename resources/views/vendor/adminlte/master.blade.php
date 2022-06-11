@@ -46,6 +46,15 @@
     @endif
   @endif
 
+  <style>
+    .back-to-top {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      display: none;
+    }
+  </style>
+
   {{-- Custom Stylesheets (post AdminLTE) --}}
   @yield('adminlte_css')
 
@@ -102,6 +111,8 @@
     @endif
   @endif
 
+  <a id="back-to-top" href="#" class="btn btn-secondary btn-lg back-to-top" role="button"><i
+      class="fas fa-chevron-up"></i></a>
 
   @yield('adminlte_js')
   @includeIf('share.myscripts')

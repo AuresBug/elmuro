@@ -35,7 +35,27 @@
 
     $('[data-toggle="tooltip"]').tooltip();
 
-    $('.select2').select2();
+    $('.select2').select2({
+      placeholder: {
+        id: '-1', // the value of the option
+        text: 'Seleccione una opción'
+      }
+    });
+
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 50) {
+        $('#back-to-top').fadeIn();
+      } else {
+        $('#back-to-top').fadeOut();
+      }
+    });
+    // scroll body to 0px on click
+    $('#back-to-top').click(function() {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 400);
+      return false;
+    });
   </script>
 
 

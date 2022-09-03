@@ -6,7 +6,7 @@ use App\Enums\EnumRoles;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class UserSedeer extends Seeder
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.

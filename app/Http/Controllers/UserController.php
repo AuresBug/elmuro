@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\FilesController;
 use App\Http\Requests\User\StoreUserRequest;
 use App\Http\Requests\User\UpdateUserRequest;
 use App\Models\Role;
@@ -65,14 +66,15 @@ class UserController extends Controller
     {
         $fields = $request->validated();
 
-        $roles = Arr::pull($fields, 'roles');
+        $roles              = Arr::pull($fields, 'roles');
+        $fields['password'] = bcrypt($fields['password']);
 
         $user = User::create(Arr::except($fields, 'avatar'));
 
         $user->roles()->sync($roles);
 
         if ($request->hasFile('avatar')) {
-            $this->saveFile($request->file('avatar'), 'avatar', $user);
+            FilesController::saveFile($request->file('avatar'), $user, 'private', 'avatar');
         }
 
         return redirect()->route('users.index')->with('toast_success', 'Registro guardado.');
@@ -125,11 +127,15 @@ class UserController extends Controller
 
         if ($password) {
             $user->update([
-                'password' => $password,
+                'password' => bcrypt($password),
             ]);
         }
-        if ($request->hasFile('avatar') && !$this->saveFile($request->file('avatar'), 'avatar', $user)) {
-            return redirect()->route('users.edit', $user)->with('toast_error', 'Algo sailo mal. Intente de nuevo!');
+        if ($request->hasFile('avatar') && !FilesController::saveFile($request->file('avatar'), $user, 'private', 'avatar')) {
+            return redirect()->route('users.edit', $user)->with('toast_error', 'Algo salio mal. Intente de nuevo!');
+        }
+
+        if ($request->hasFile('file') && !FilesController::saveFile($request->file('file'), $user, 'private')) {
+            return redirect()->route('users.edit', $user)->with('toast_error', 'Algo salio mal. Intente de nuevo!');
         }
 
         return redirect()->route('users.edit', $user)->with('toast_success', 'Registro actualizado.');

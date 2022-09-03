@@ -23,7 +23,11 @@
 
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
       {!! Form::label('email', 'Correo electronico') !!}
-      {!! Form::email('email', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => 'eg: foo@bar.com']) !!}
+      {!! Form::email('email', null, [
+          'class' => 'form-control',
+          'required' => 'required',
+          'placeholder' => 'eg: foo@bar.com',
+      ]) !!}
       <small class="text-danger">{{ $errors->first('email') }}</small>
     </div>
 
@@ -41,8 +45,20 @@
 
     <div class="form-group{{ $errors->has('roles') ? ' has-error' : '' }}">
       {!! Form::label('roles', 'Roles') !!}
-      {!! Form::select('roles[]', $roles, null, ['id' => 'roles', 'class' => 'form-control select2', 'required' => 'required', 'multiple']) !!}
+      {!! Form::select('roles[]', $roles, null, [
+          'id' => 'roles',
+          'class' => 'form-control select2',
+          'required' => 'required',
+          'multiple',
+      ]) !!}
       <small class="text-danger">{{ $errors->first('roles') }}</small>
+    </div>
+
+    <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
+      {!! Form::label('file', 'Subir archivo') !!}
+      {!! Form::file('file', ['required' => 'required']) !!}
+      <p class="help-block">Help block text</p>
+      <small class="text-danger">{{ $errors->first('file') }}</small>
     </div>
   </div>
 </div>

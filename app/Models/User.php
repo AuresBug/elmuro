@@ -87,15 +87,7 @@ class User extends Authenticatable implements Auditable
 
     public function adminlte_image()
     {
-        $media = auth()->user()->getMedia('avatar')->last();
-
-        if (!$media) {
-            return asset('images/default-avatar.jpeg');
-        }
-
-        $avatar = $media->name ?: null;
-
-        return route('getFile', [$avatar, 'avatar']);
+        return auth()->user()->avatar();
     }
 
     public function adminlte_desc()
@@ -116,17 +108,6 @@ class User extends Authenticatable implements Auditable
     {
         $this->addMediaGroup('avatar')
             ->performConversions('avatar');
-    }
-
-/**
- * Set the password encryption
- *
- * @param  string $value
- * @return void
- */
-    public function setPasswordAttribute($value)
-    {
-        return $this->attributes['password'] = bcrypt($value);
     }
 
 /* -------------------------------------------------------------------------- */

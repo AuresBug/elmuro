@@ -21,16 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
+// Files Controller
+Route::get('/files/{filenName}/{group?}', [FilesController::class, 'getFile'])->name('getFile');
+
 Route::prefix('admin')->middleware('auth')->group(function () {
 
     // Home
-    Route::get('/', function () {
-        return redirect()->route('home');
-    })->name('home');
+    Route::get('/', function () {return redirect()->route('home');});
     Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-    // Files Controller
-    Route::get('/files/{filenName}/{group?}', FilesController::class)->name('getFile');
 
     // Users
 

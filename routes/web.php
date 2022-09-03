@@ -19,11 +19,14 @@ Route::get('/auth/{driver}/callback', [SocialiteController::class, 'handleProvid
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
 
     // Home
+    Route::get('/', function () {
+        return redirect()->route('home');
+    })->name('home');
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
     // Files Controller
@@ -42,6 +45,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::fallback(function () {
 
-    return redirect('home')->with('toast_errors', 'Algo salio mal!.');
+    return redirect()->route('welcome')->with('toast_errors', 'Algo salio mal!.');
 
 });

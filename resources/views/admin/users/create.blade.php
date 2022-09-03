@@ -24,7 +24,7 @@
 
           @include('admin.users.includes.form')
 
-          @include('share.buttons.submit_cancel', ['routeName' => 'users.index'])
+          @include('share.buttons.submit_cancel', ['url' => route('users.index')])
 
           {!! Form::close() !!}
         </div>

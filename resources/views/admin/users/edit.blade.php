@@ -10,7 +10,7 @@
     </div>
     @can('delete', $user)
       <div class="col-auto ml-auto">
-        @include('share.buttons.destroy', ['routeName' => 'users.destroy', 'params' => $user])
+        @include('share.buttons.destroy', ['url' => route('users.destroy', $user)])
       </div>
     @endcan
   </div>
@@ -22,11 +22,16 @@
       <div class="card">
         <div class="card-body">
 
-          {!! Form::model($user, ['route' => ['users.update', $user], 'method' => 'PUT', 'class' => 'form-horizontal', 'files' => true]) !!}
+          {!! Form::model($user, [
+              'route' => ['users.update', $user],
+              'method' => 'PUT',
+              'class' => 'form-horizontal',
+              'files' => true,
+          ]) !!}
 
           @include('admin.users.includes.form')
 
-          @include('share.buttons.submit_cancel', ['routeName' => 'users.index'])
+          @include('share.buttons.submit_cancel', ['url' => route('users.index')])
 
           {!! Form::close() !!}
         </div>

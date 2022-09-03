@@ -1,4 +1,6 @@
-<a class="{{ $class ?? 'btn btn-sm btn-outline-secondary' }}" href="{{ route($routeName, $params) }}" role="button"
-  data-toggle="tooltip" data-placement="top" title="{{ $text ?? 'Ver' }}"><i
-    class="{{ $icon ?? 'fas fa-eye' }} fa-fw"></i>
-  {{ $text ?? 'Ver' }}</a>
+@include('share.buttons.default', [
+    'url' => $url ?? null,
+    'class' => $class ?? 'btn btn-sm btn-outline-secondary',
+    'text' => $text ?? 'Ver',
+    'icon' => $icon ?? 'fas fa-eye',
+])

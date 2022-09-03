@@ -10,7 +10,7 @@
     </div>
     @can('delete', $role)
       <div class="col-auto ml-auto">
-        @include('share.buttons.destroy', ['routeName' => 'roles.destroy', 'params' => $role])
+        @include('share.buttons.destroy', ['url' => route('roles.destroy', $role)])
       </div>
     @endcan
   </div>
@@ -26,7 +26,7 @@
 
           @include('admin.roles.includes.form')
 
-          @include('share.buttons.submit_cancel', ['routeName' => 'roles.index'])
+          @include('share.buttons.submit_cancel', ['url' => route('roles.index')])
 
           {!! Form::close() !!}
         </div>

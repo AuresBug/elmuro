@@ -10,7 +10,7 @@
     </div>
     @can('create', \App\Models\User::class)
       <div class="col-auto">
-        @include('share.buttons.create', ['routeName' => 'users.create'])
+        @include('share.buttons.create', ['url' => route('users.create')])
       </div>
     @endcan
   </div>
@@ -39,7 +39,8 @@
 
 @section('js')
   @include('share.datatable', [
-      'model' => 'users',
+      'element_id' => 'users-table',
+      'url' => route('users.getIndexTable'),
       'fields' => [
           [
               'name' => 'name',

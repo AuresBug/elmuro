@@ -46,7 +46,7 @@ return [
      */
 
     'logo'                                    => '<b>Proyecto</b> Base',
-    'logo_img'                                => 'https://picsum.photos/50/50',
+    'logo_img'                                => 'https://via.placeholder.com/50x50.png?text=PB',
     'logo_img_class'                          => 'brand-image rounded-circle elevation-3',
     'logo_img_xl'                             => null,
     'logo_img_xl_class'                       => 'brand-image-xs',
@@ -85,8 +85,8 @@ return [
 
     'layout_topnav'                           => null,
     'layout_boxed'                            => null,
-    'layout_fixed_sidebar'                    => null,
-    'layout_fixed_navbar'                     => null,
+    'layout_fixed_sidebar'                    => true,
+    'layout_fixed_navbar'                     => true,
     'layout_fixed_footer'                     => null,
     'layout_dark_mode'                        => null,
 

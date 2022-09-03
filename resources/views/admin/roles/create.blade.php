@@ -24,7 +24,7 @@
 
           @include('admin.roles.includes.form')
 
-          @include('share.buttons.submit_cancel', ['routeName' => 'roles.index'])
+          @include('share.buttons.submit_cancel', ['url' => route('roles.index')])
 
           {!! Form::close() !!}
         </div>

@@ -12,13 +12,12 @@
     </div>
     @can('update', $user)
       <div class="col-auto ">
-        @include('share.buttons.edit', ['routeName' => 'users.edit', 'params' => $user])
+        @include('share.buttons.edit', ['url' => route('users.edit', $user)])
       </div>
     @endcan
     @can('delete', $user)
       <div class="col-auto ml-auto">
-        @include('share.buttons.destroy', ['routeName' => 'users.destroy', 'params' => $user])
-
+        @include('share.buttons.destroy', ['url' => route('users.destroy', $user)])
       </div>
     @endcan
   </div>

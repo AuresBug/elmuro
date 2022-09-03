@@ -2,13 +2,13 @@
     $(document).ready(function() {
 
 
-      var table = $('#{{ $model }}-table').DataTable({
+      var table = $('#{{ $element_id }}').DataTable({
         serverSide: true,
         pageLength: 25,
         language: {
           url: '{{ asset('vendor/datatables/es-mx.json') }}'
         },
-        ajax: "{{ route($model . '.getIndexTable', $params ?? '') }}",
+        ajax: "{{ $url }}",
         order: [
           {!! $order ?? "[0, 'desc']" !!}
         ],

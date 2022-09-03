@@ -10,8 +10,7 @@
       @can('view', $user)
         <div class="col-auto">
           @include('share.buttons.show', [
-              'routeName' => 'users.show',
-              'params' => $user,
+              'url' => route('users.show', $user),
               'class' => 'dropdown-item',
           ])
         </div>
@@ -21,8 +20,7 @@
       @can('update', $user)
         <div class="col-auto">
           @include('share.buttons.edit', [
-              'routeName' => 'users.edit',
-              'params' => $user,
+              'url' => route('users.edit', $user),
               'class' => 'dropdown-item',
           ])
         </div>
@@ -35,8 +33,7 @@
       @can('delete', $user)
         <div class="col-auto">
           @include('share.buttons.destroy', [
-              'routeName' => 'users.destroy',
-              'params' => $user,
+              'url' => route('users.destroy', $user),
               'class' => 'dropdown-item text-danger',
           ])
         </div>

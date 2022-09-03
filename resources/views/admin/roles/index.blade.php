@@ -10,13 +10,15 @@
     </div>
     @can('roles.create')
       <div class="col-auto ">
-        @include('share.buttons.create', ['routeName' => 'roles.create'])
+        @include('share.buttons.create', ['url' => route('roles.create')])
       </div>
     @endcan
   </div>
 @stop
 
 @section('content')
+
+
   <div class="row">
     <div class="col-12">
       <div class="card">
@@ -39,7 +41,8 @@
 
 @section('js')
   @include('share.datatable', [
-      'model' => 'roles',
+      'element_id' => 'roles-table',
+      'url' => route('roles.getIndexTable'),
       'fields' => [
           ['name' => 'name'],
           [

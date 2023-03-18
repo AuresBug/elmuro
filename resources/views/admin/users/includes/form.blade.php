@@ -54,11 +54,5 @@
       <small class="text-danger">{{ $errors->first('roles') }}</small>
     </div>
 
-    <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
-      {!! Form::label('file', 'Subir archivo') !!}
-      {!! Form::file('file', ['required' => 'required']) !!}
-      <p class="help-block">Help block text</p>
-      <small class="text-danger">{{ $errors->first('file') }}</small>
-    </div>
   </div>
 </div>

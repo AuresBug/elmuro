@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'email'    => 'sudo@sudo.com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
             ]
         );
 
@@ -36,7 +36,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'email'    => 'admin@admin.com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
             ]
         );
 
@@ -49,7 +49,7 @@ class UserSeeder extends Seeder
             ],
             [
                 'email'    => 'user@user.com',
-                'password' => 'password',
+                'password' => bcrypt('password'),
             ]
         );
 

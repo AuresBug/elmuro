@@ -16,7 +16,7 @@ return [
 
     'title'                                   => 'Proyecto Base',
     'title_prefix'                            => '',
-    'title_postfix'                           => '| Proyecto',
+    'title_postfix'                           => '| ProyectoBase',
 
     /*
     |--------------------------------------------------------------------------

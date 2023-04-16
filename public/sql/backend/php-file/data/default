@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!-- SQL XML created by WWW SQL Designer, https://github.com/ondras/wwwsqldesigner/ -->
-<!-- Active URL: http://base.localhost/sql/ -->
+<!-- Active URL: http://mural.localhost/sql/ -->
 <sql>
 <datatypes db="mysql">
 
@@ -229,7 +229,7 @@
 <part>model_type</part>
 </key>
 </table>
-<table x="251" y="397" name="users">
+<table x="0" y="678" name="users">
 <row name="id" null="0" autoincrement="1">
 <datatype>BIGINT(20)</datatype>
 </row>
@@ -264,7 +264,7 @@
 <part>email</part>
 </key>
 </table>
-<table x="23" y="401" name="social_profiles">
+<table x="230" y="391" name="social_profiles">
 <row name="id" null="0" autoincrement="1">
 <datatype>BIGINT(20)</datatype>
 </row>
@@ -446,6 +446,37 @@
 <key type="INDEX" name="audits_auditable_type_auditable_id_index">
 <part>auditable_type</part>
 <part>auditable_id</part>
+</key>
+</table>
+<table x="518" y="660" name="posts">
+<row name="id" null="1" autoincrement="1">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<row name="title" null="1" autoincrement="0">
+<datatype>VARCHAR</datatype>
+<default>NULL</default></row>
+<row name="content" null="1" autoincrement="0">
+<datatype>MEDIUMTEXT</datatype>
+<default>NULL</default></row>
+<row name="likes" null="1" autoincrement="0">
+<datatype>BIGINT</datatype>
+<default>NULL</default></row>
+<row name="expired_at" null="1" autoincrement="0">
+<datatype>DATE</datatype>
+<default>NULL</default></row>
+<row name="created_by" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="approved_by" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default><relation table="users" row="id" />
+</row>
+<row name="approved_at" null="1" autoincrement="0">
+<datatype>INTEGER</datatype>
+<default>NULL</default></row>
+<key type="PRIMARY" name="">
+<part>id</part>
 </key>
 </table>
 </sql>

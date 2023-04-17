@@ -12,6 +12,8 @@
     }
   </style>
 @stop
+
+@section('title', 'Inicio')
 @section('content')
 
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -62,8 +64,7 @@
           <div class="card-body">
             <h4 class="card-title text-bold text-left mb-2">{{ $post->title }}</h4>
             <p class="card-text text-justify">{{ $post->small_content }}
-              <a name="view" id="view" class="btn btn-link " href="#" role="button">Ver
-                mas</a>
+              <a href="#" class="card-link">Ver mas</a>
             </p>
 
           </div>

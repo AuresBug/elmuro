@@ -14,9 +14,9 @@ return [
     |
      */
 
-    'title'                                   => 'Proyecto Base',
+    'title'                                   => 'El Mural',
     'title_prefix'                            => '',
-    'title_postfix'                           => '| ProyectoBase',
+    'title_postfix'                           => '| El Mural',
 
     /*
     |--------------------------------------------------------------------------

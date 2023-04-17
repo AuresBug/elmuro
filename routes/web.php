@@ -17,21 +17,18 @@ Auth::routes(['register' => false]);
 Route::get('/auth/{driver}/redirect', [SocialiteController::class, 'redirectToProvider'])->name('google.login');
 Route::get('/auth/{driver}/callback', [SocialiteController::class, 'handleProviderCallback']);
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
-
 // Files Controller
 Route::get('/files/{filenName}/{group?}', [FilesController::class, 'getFile'])->name('getFile');
 
+// Home
+Route::get('/', [HomeController::class, 'home'])->name('home');
+
 Route::prefix('admin')->middleware('auth')->group(function () {
 
-    // Home
-    Route::get('/', function () {return redirect()->route('home');});
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    // Admin
+    Route::get('/', [HomeController::class, 'index'])->name('admin');
 
     // Users
-
     Route::get('users/get-index-table', [UserController::class, 'getIndexTable'])->name('users.getIndexTable');
     Route::resource('users', UserController::class);
 
@@ -43,6 +40,6 @@ Route::prefix('admin')->middleware('auth')->group(function () {
 
 Route::fallback(function () {
 
-    return redirect()->route('welcome')->with('toast_errors', 'Algo salio mal!.');
+    return redirect()->route('home')->with('toast_errors', 'Algo salio mal!.');
 
 });

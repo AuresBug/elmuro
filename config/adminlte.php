@@ -457,6 +457,16 @@ return [
                 ],
             ],
         ],
+        'Holder'      => [
+            'active' => true,
+            'files'  => [
+                [
+                    'type'     => 'js',
+                    'asset'    => true,
+                    'location' => '//cdnjs.cloudflare.com/ajax/libs/holder/2.9.8/holder.min.js',
+                ],
+            ],
+        ],
     ],
 
     /*

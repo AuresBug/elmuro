@@ -13,7 +13,7 @@ Route::get('phpinfo', function () {
 });
 
 // Auth
-Auth::routes(['register' => false]);
+Auth::routes();
 Route::get('/auth/{driver}/redirect', [SocialiteController::class, 'redirectToProvider'])->name('google.login');
 Route::get('/auth/{driver}/callback', [SocialiteController::class, 'handleProviderCallback']);
 

@@ -23,6 +23,8 @@ class PostFactory extends Factory
             'approved_by' => User::factory()->create(),
             'approved_at' => $this->faker->dateTimeBetween('now', '+10 months'),
             'created_by'  => User::factory()->create(),
+            'created_at'  => $this->faker->dateTimeBetween('-1 months', 'now')
+            ,
 
         ];
     }

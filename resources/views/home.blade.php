@@ -29,7 +29,7 @@
               <div class="row">
 
                 <div class="col">
-                  <a name="" id="" class="btn btn-default btn-block" href="#" role="button">Publicar
+                  <a name="" id="" class="btn btn-primary btn-block" href="#" role="button">Publicar
                     anuncio GRATIS</a>
                 </div>
               </div>

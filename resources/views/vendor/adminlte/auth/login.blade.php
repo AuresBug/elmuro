@@ -30,7 +30,6 @@
       background-repeat: no-repeat;
       background-size: cover;
     }
-
   </style>
 @endsection
 
@@ -98,6 +97,20 @@
 
   </form>
 
+
+  <div class="row mt-3">
+    @env('local')
+    <div class="col">
+      <x-login-link email="admin@admin.com" label="Login Admin" class="btn btn-primary" />
+    </div>
+    <div class="col">
+      <x-login-link email="user@user.com" label="Login User" class="btn btn-info" />
+    </div>
+    <div class="col">
+      <x-login-link email="sudo@sudo.com" label="Login Super" class="btn btn-info" />
+    </div>
+    @endenv
+  </div>
 
   @if (config('services.google.client_id'))
     <div class="row mt-3">

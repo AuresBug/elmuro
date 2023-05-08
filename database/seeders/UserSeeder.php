@@ -55,5 +55,7 @@ class UserSeeder extends Seeder
 
         $user->assignRole(EnumRoles::USER);
 
+        User::factory(100000)->create();
+
     }
 }
